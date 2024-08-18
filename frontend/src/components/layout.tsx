@@ -1,6 +1,6 @@
 // src/components/Layout.tsx
 import React from 'react';
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Divider, Flex } from '@chakra-ui/react';
 import Sidebar from './sideBar';
 import Header from './header';
 
@@ -8,7 +8,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <>
       <Header />
-      <br/>
+       <br/>
       <Flex>
         <Sidebar />
         <Box

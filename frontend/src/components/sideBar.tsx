@@ -1,6 +1,6 @@
 // src/components/Sidebar.tsx
 import React from 'react';
-import { Box, VStack, Link, useDisclosure, Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, IconButton } from '@chakra-ui/react';
+import { Box, VStack, Link, useDisclosure, Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, IconButton, Divider } from '@chakra-ui/react';
 import { FaHome, FaTasks, FaUser, FaBars } from 'react-icons/fa';
 import { HamburgerIcon } from '@chakra-ui/icons'
 
@@ -52,15 +52,14 @@ const Sidebar: React.FC = () => {
                 top="65px" // Ajuste para ficar abaixo do header
                 left={0}
                 bottom={0}
-                bg="blue.500"
+                bg="black"
                 color="white"
                 p={4}
                 overflowY="auto" // Permite rolar se o conteúdo for maior que a altura do sidebar
             >
                 <VStack spacing={4} align="start">
-                <Link href="#"><FaHome /> Home</Link>
-                <Link href="#"><FaTasks /> Tasks</Link>
-                <Link href="#"><FaUser /> Profile</Link>
+                <Link href="#"> {<FaHome />} Sobre o projeto</Link>
+                <Link href="#"><FaTasks />Perfil</Link>
                 </VStack>
             </Box>
         </>

@@ -5,7 +5,7 @@ import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 const Header: React.FC = () => {
   return (
     <Box
-      bg="blue.500"
+      bg="black"
       color="white"
       p={4}
       position="fixed"
@@ -14,9 +14,8 @@ const Header: React.FC = () => {
       right={0}
       zIndex={10} // Definindo um zIndex alto para garantir que o header esteja acima de outros elementos
     >
-      <Flex align="center" justify="flex-start">
-        <Heading size="lg">To-Do List App</Heading>
-        <Text>Header Content</Text> {/* You can add more elements or navigation links here */}
+      <Flex align="center" justify="center">
+        <Heading size="lg" alignContent={'center'} >Tarefas a fazer</Heading>
       </Flex>
     </Box>
   );
