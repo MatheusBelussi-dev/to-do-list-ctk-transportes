@@ -1,16 +1,43 @@
 version: '3.8'
-services:
-  db:
-    image: postgres:15
-    restart: always
-    environment:
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: mypassword
-      POSTGRES_DB: mydatabase
-    ports:
-      - "5432:5432"
-    volumes:
-      - db_data:/var/lib/postgresql/data
 
-volumes:
-  db_data:
+services: 
+  postgres:
+    restart: always
+    build: 
+      context: .
+      dockerfile: postgresql/Dockerfile
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: mydb
+    ports: 
+      - "15432:5432"
+    networks: 
+      - postgres-network
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    volumes:
+      - ./frontend:/src
+      - /app/node_modules
+    command: npm run dev
+
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - postgres
+    volumes:
+      - ./backend:/src
+    command: npm start
+    networks: 
+      - postgres-network
+
+networks: 
+  postgres-network:
+    driver: bridge
