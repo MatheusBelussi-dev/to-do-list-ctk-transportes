@@ -27,7 +27,7 @@ export const fetchAndInsertTodos = async () => {
 
       const client = await pool.connect();
 
-      for (const todo of todos.slice(0, 100)) {  // Pegando os primeiros 100 todos
+      for (const todo of todos.slice(0, 100)) {  
           await client.query(
               'INSERT INTO todo.tarefas (titulo, status) VALUES ($1, $2)',
               [todo.title, todo.completed ? 'concluída' : 'pendente']

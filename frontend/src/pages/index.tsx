@@ -66,9 +66,9 @@ const ToDoPage: React.FC = () => {
     const handleEdit = (id: number) => {
         const taskToEdit = tasks.find(task => task.id === id);
         if (taskToEdit) {
-            setFormTask(taskToEdit); // Preenche o formulário com os dados da tarefa
-            setIsEditing(true);       // Ativa o modo de edição
-            setEditingTaskId(id);     // Define qual tarefa está sendo editada
+            setFormTask(taskToEdit);
+            setIsEditing(true);       
+            setEditingTaskId(id);     
         }
     };
 
@@ -103,7 +103,7 @@ const ToDoPage: React.FC = () => {
         } else {
             setTasks(prevTasks => [
                 ...prevTasks,
-                { ...formTask, id: Date.now() }  // Gera um id único
+                { ...formTask, id: Date.now() }  
             ]);
         }
 

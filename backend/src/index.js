@@ -1,13 +1,13 @@
 import express from 'express';
-import cors from 'cors'; // Importe o pacote CORS
+import cors from 'cors'; 
 import routes from './routes.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Configuração do CORS
+
 app.use(cors({
-    origin: 'http://localhost:3000' // Substitua pela URL do seu frontend
+    origin: 'http://localhost:3000' 
 }));
 
 
