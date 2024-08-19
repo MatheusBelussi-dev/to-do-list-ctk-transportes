@@ -1,4 +1,4 @@
-// src/components/Sidebar.tsx
+
 import React from 'react';
 import { Box, VStack, Link, useDisclosure, Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, IconButton, Divider } from '@chakra-ui/react';
 import { FaHome, FaTasks, FaUser, FaBars } from 'react-icons/fa';
@@ -10,7 +10,7 @@ const Sidebar: React.FC = () => {
     return (
         <>
             <Box
-                display={{ base: 'block', md: 'none' }} // Exibe o menu em telas pequenas
+                display={{ base: 'block', md: 'none' }} 
                 pos="fixed"
                 top="0"
                 left="0"
@@ -46,16 +46,16 @@ const Sidebar: React.FC = () => {
 
             <Box
                 as="nav"
-                display={{ base: 'none', md: 'block' }} // Exibe o sidebar em telas maiores
+                display={{ base: 'none', md: 'block' }} 
                 w="250px"
                 pos="fixed"
-                top="65px" // Ajuste para ficar abaixo do header
+                top="65px" 
                 left={0}
                 bottom={0}
                 bg="black"
                 color="white"
                 p={4}
-                overflowY="auto" // Permite rolar se o conteúdo for maior que a altura do sidebar
+                overflowY="auto" 
             >
                 <VStack spacing={4} align="start">
                 <Link href="#"> {<FaHome />} Sobre o projeto</Link>

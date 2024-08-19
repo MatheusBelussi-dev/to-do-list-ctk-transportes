@@ -1,5 +1,5 @@
 import axios from 'axios';
-// Importa a conexão com o banco de dados
+
 import pool from './db.js'; 
 
 export const fetchPublicApiData = async () => {
@@ -41,19 +41,6 @@ export const fetchAndInsertTodos = async () => {
   }
 };
 
-export const addTaskToDatabase = async (taskData) => {
-    try {
-        const client = await pool.connect();
-        await client.query(
-            'INSERT INTO tarefas (titulo, usuario, tipo, prioridade, status) VALUES ($1, $2, $3, $4, $5)',
-            [taskData.task, taskData.user, taskData.type, taskData.priority, 'pendente']
-        );
-        client.release();
-        return { success: true };
-    } catch (error) {
-        console.error('Erro ao adicionar tarefa ao banco de dados:', error);
-        throw error;
-    }
-};
+
 
 

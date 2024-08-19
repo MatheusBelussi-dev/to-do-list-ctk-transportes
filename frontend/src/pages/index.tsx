@@ -47,7 +47,6 @@ const ToDoPage: React.FC = () => {
     });
 
     const [tasks, setTasks] = useState<TodoInput[]>([]);
-    const [suggestions, setSuggestions] = useState<string[]>([]);
     const toast = useToast();
     const [isEditing, setIsEditing] = useState(false);
     const [editingTaskId, setEditingTaskId] = useState<number | null>(null);
@@ -162,17 +161,6 @@ const ToDoPage: React.FC = () => {
                                     value={formTask.task}
                                     onChange={handleChange}
                                 />
-                                <Select
-                                    placeholder="Selecione uma tarefa existente"
-                                    onChange={handleSelectChange}
-                                    value={formTask.task}
-                                >
-                                    {suggestions.map((suggestion: any, index) => (
-                                        <option key={index} value={suggestion.title}>
-                                            {suggestion.title}
-                                        </option>
-                                    ))}
-                                </Select>
                             </Box>
                             <Box p={4} borderRadius="md">
                                 <Select

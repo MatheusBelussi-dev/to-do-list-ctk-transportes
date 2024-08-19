@@ -1,4 +1,4 @@
-// components/Paper.tsx
+
 import React from 'react';
 import { Box, BoxProps } from '@chakra-ui/react';
 
