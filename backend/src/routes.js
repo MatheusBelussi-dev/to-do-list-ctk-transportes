@@ -1,5 +1,5 @@
 import express from 'express';
-import  {fetchPublicApiData, fetchAndInsertTodos, addTaskToDatabase } from './services.js'
+import  {fetchPublicApiData, fetchAndInsertTodos} from './services.js'
 
 const router = express.Router();
 
@@ -23,15 +23,6 @@ router.get('/data100', async (req, res) => {
     }
 
 
-});
-
-router.post('/addTasks', async (req, res) => {
-    try {
-        const result = await addTaskToDatabase(req.body);
-        res.status(201).json(result);
-    } catch (error) {
-        res.status(500).json({ error: 'Falha ao adicionar tarefa ao banco de dados' });
-    }
 });
 
 export default router;
